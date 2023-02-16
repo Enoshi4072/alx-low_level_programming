@@ -1,4 +1,8 @@
 #include <stdio.h>
+/**
+ * main - The program prints a line with the puts function
+ * Returns: 0
+ */
 
 int main(void)
 {
