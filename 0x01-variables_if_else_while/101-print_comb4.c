@@ -6,16 +6,16 @@
 int main(void)
 {
 int number1, number2, number3;
-for (num1 = 0; num1 < 8; num1++)
+for (number1 = 0; number1 < 8; number1++)
 {
-for (num2 = num1 + 1; num2 < 9; num2++)
+for (number2 = number1 + 1; number2 < 9; number2++)
 {
-for (num3 = num2 + 1; num3 < 10; num3++)
+for (number3 = number2 + 1; number3 < 10; number3++)
 {
-putchar(num1 + '0');
-putchar(num2 + '0');
-putchar(num3 + '0');
-if (num1 != 7 || num2 != 8 || num3 != 9)
+putchar(number1 + '0');
+putchar(number2 + '0');
+putchar(number3 + '0');
+if (number1 != 7 || number2 != 8 || number3 != 9)
 {
 putchar(',');
 putchar(' ');
