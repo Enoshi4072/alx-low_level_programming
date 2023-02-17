@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-charlowe_case = 'a';
+char lower_case = 'a';
 while (lower_case <= 'z')
 {
 	putchar(lower_case);
