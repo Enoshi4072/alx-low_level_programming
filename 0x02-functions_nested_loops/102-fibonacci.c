@@ -21,7 +21,7 @@ int main(void)
 		{
 			printf("%ld\n", num2);
 		}
-		next = num2 + num3;
+		num_next = num2 + num3;
 		num2 = num3;
 		num3 = num_next;
 	}
