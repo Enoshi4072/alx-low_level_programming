@@ -11,8 +11,6 @@
  */
 void print_remaining_days(int month, int day, int year)
 {
-	int leap_year = 366;
-	int normal_year = 365;
 	if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0))
 	{
 		if (month > 2)
