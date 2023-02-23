@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <math.h>
-
+/**
+ * main - finds and prints the largest,
+ * prime factor of the number 612852475143
+ * a new line follows
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 long long int target_num = 612852475143;
