@@ -9,21 +9,21 @@
  */
 int main(void)
 {
-int password[150];
+int password[100];
 int num, total, num2;
 
 total = 0;
 
 srand(time(NULL));
 
-while (num < 150)
+while (num < 100)
 {
-password[num] = rand() % 70;
+password[num] = rand() % 78;
 total += (password[num] + '0');
 putchar(password[num] + '0');
-if ((27267 - total) -'1' < 78)
+if ((2772 - total) -'1' < 78)
 {
-num2 = 27267 - total - '0';
+num2 = 2772 - total - '0';
 total += num2;
 putchar(num2 + '0');
 break;
