@@ -1,35 +1,34 @@
 #include "main.h"
 
 /**
- * cap_string - capitalizes every
- * word of a string
- * @cap_next: string to modify
- * @str: The string to be returned
+ * cap_string - capitalizes everey word of a string
+ * @s: string to modify
+ *
  * Return: the resulting string
  */
+char *cap_string(char *s)
+{
+int num1, num2;
 
-char *cap_string(char *str)
-{
-int i = 0;
-int cap_next = 1;
-while (str[i] != '\0')
-{
-if (cap_next && str[i] >= 'a' && str[i] <= 'z')
-{
-str[i] -= ('a' - 'A');
-}
-if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
-str[i] == ',' || str[i] == ';' || str[i] == '.' ||
-str[i] == '!' || str[i] == '?' || str[i] == '"' ||
-str[i] == '(' || str[i] == ')' || str[i] == '{' ||
-str[i] == '}') {
-cap_next = 1;
-}
-else
-{
-cap_next = 0;
-}
-i++;
-}
-return (str);
+char spe[13] = {' ', '\t', '\n', ',', ';', '.',
+		'!', '?', '"', '(', ')', '{', '}'};
+
+	for (num1 = 0; s[num1] != '\0'; num1++)
+	{
+		if (num1 == 0 && s[num1] >= 'a' && s[num1] <= 'z')
+			s[num1] -= 32;
+
+		for (num2 = 0; num2 < 13; num2++)
+		{
+			if (s[num1] == spe[num2])
+			{
+				if (s[num1 + 1] >= 'a' && s[num1 + 1] <= 'z')
+				{
+					s[num1 + 1] -= 32;
+				}
+			}
+		}
+	}
+
+	return (s);
 }
