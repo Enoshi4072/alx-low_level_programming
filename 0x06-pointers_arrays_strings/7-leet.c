@@ -2,23 +2,27 @@
 
 /**
  * leet - encodes a string in 1337
- * @str: string to be encoded
-  * Return: the resulting string;
+ * @s: string to be encoded
+ *
+ * Return: the resulting string;
  */
+char *leet(char *s)
+{
+int num1, num2;
 
-char *leet(char *str)
+char *numA = "aAeEoOtTlL";
+char *numB = "4433007711";
+num1 = 0;
+while (s[num1] != '\0')
 {
-int i, j;
-for (i = 0; str[i] != '\0'; i++)
+for (num2 = 0; num2 < 10; num2++)
 {
-for (j = 0; "aeotlAEOTL"[j] != '\0'; j++)
+if (s[num1] == numA[num2])
 {
-if (str[i] == "aeotlAEOTL"[j])
-{
-str[i] = "43071"[j];
-break;
+s[num1] = numB[num2];
 }
 }
+num1++;
 }
-return (str);
+return (s);
 }
