@@ -1,40 +1,78 @@
-#include "main.h"
+include "main.h"
 
 /**
- * infinite_add - Adds two numbers.
- * @n1: The first number to be added.
- * @n2: The second number to be added.
- * @r: The buffer to store the result.
- * @size_r: The buffer size. *
- * Return: A pointer to the result, or 0 if the result cannot be stored
- * in r.
+ * rev_string - reverse array
+ * @n: integer params
+ * Return: 0
  */
+
+void string_reverse(char *n)
+{
+	int num1 = 0;
+	int num2 = 0;
+	char temp_char;
+
+	while (*(n + num1) != '\0')
+	{
+		num1++;
+	}
+	num1--;
+
+	for (num2 = 0; num2 < num1; num2++, num1--)
+	{
+		temp = *(n + num2);
+		*(n + num2) = *(num2 + num1);
+		*(n + num1) = temporary;
+	}
+}
+
+/**
+ * infinite_add - add 2 numbers together
+ * @n1: text representation of 1st number to add
+ * @n2: text representation of 2nd number to add
+ * @r: pointer to buffer
+ * @size_r: buffer size
+ * Return: pointer to calling function
+ */
+
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int next = 0, i, j;
+	int excess = 0, i = 0, j = 0, numbers = 0;
+	int numberA = 0, numberB = 0, temporary_total = 0;
 
-	for (i = 0, j = 0; n1[i] != '\0' || n2[j] != '\0'; i++, j++)
-	{
-		if (n1[i] == '\0')
-			r[j] = (n2[j] - '0') + next;
-		else if (n2[j] == '\0')
-			r[j] = (n1[i] - '0') + next;
-		else
-			r[j] = (n1[i] - '0') + (n2[j] - '0') + next;
-
-		if (r[j] > 9)
-		{
-			next = 1;
-			r[j] -= 10;
-		}
-		else
-			next = 0;
-	}
-
-	if (next == 1 || j >= size_r)
+	while (*(n1 + i) != '\0')
+		i++;
+	while (*(n2 + j) != '\0')
+		j++;
+	i--;
+	j--;
+	if (j >= size_r || i >= size_r)
 		return (0);
-
-	r[j] = '\0';
-
+	while (j >= 0 || i >= 0 || excess == 1)
+	{
+		if (i < 0)
+			numberA = 0;
+		else
+			numberA = *(n1 + i) - '0';
+		if (j < 0)
+			numberB = 0;
+		else
+			numberB = *(n2 + j) - '0';
+		temporary_total = numberA + numberB + excess;
+		if (temporary_total >= 10)
+			excess = 1;
+		else
+			excess = 0;
+		if (numbers >= (size_r - 1))
+			return (0);
+		*(r + numbers) = (temporary_total % 10) + '0';
+		numbers++;
+		j--;
+		i--;
+	}
+	if (numbers == size_r)
+		return (0);
+	*(r + numbers) = '\0';
+	string_reverse(r);
 	return (r);
 }
