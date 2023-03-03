@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 
 /**
  * rev_string - reverse array
@@ -6,24 +6,24 @@ include "main.h"
  * Return: 0
  */
 
-void string_reverse(char *n)
+void reverse_string(char *n)
 {
-	int num1 = 0;
-	int num2 = 0;
-	char temp_char;
+int i = 0;
+int j = 0;
+char temp;
 
-	while (*(n + num1) != '\0')
-	{
-		num1++;
-	}
-	num1--;
+while (*(n + i) != '\0')
+{
+i++;
+}
+i--;
 
-	for (num2 = 0; num2 < num1; num2++, num1--)
-	{
-		temp = *(n + num2);
-		*(n + num2) = *(num2 + num1);
-		*(n + num1) = temporary;
-	}
+for (j = 0; j < i; j++, i--)
+{
+temp = *(n + j);
+*(n + j) = *(n + i);
+*(n + i) = temp;
+}
 }
 
 /**
@@ -37,42 +37,42 @@ void string_reverse(char *n)
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int excess = 0, i = 0, j = 0, numbers = 0;
-	int numberA = 0, numberB = 0, temporary_total = 0;
+int overflow = 0, i = 0, j = 0, digits = 0;
+int val1 = 0, val2 = 0, temp_tot = 0;
 
-	while (*(n1 + i) != '\0')
-		i++;
-	while (*(n2 + j) != '\0')
-		j++;
-	i--;
-	j--;
-	if (j >= size_r || i >= size_r)
-		return (0);
-	while (j >= 0 || i >= 0 || excess == 1)
-	{
-		if (i < 0)
-			numberA = 0;
-		else
-			numberA = *(n1 + i) - '0';
-		if (j < 0)
-			numberB = 0;
-		else
-			numberB = *(n2 + j) - '0';
-		temporary_total = numberA + numberB + excess;
-		if (temporary_total >= 10)
-			excess = 1;
-		else
-			excess = 0;
-		if (numbers >= (size_r - 1))
-			return (0);
-		*(r + numbers) = (temporary_total % 10) + '0';
-		numbers++;
-		j--;
-		i--;
-	}
-	if (numbers == size_r)
-		return (0);
-	*(r + numbers) = '\0';
-	string_reverse(r);
-	return (r);
+while (*(n1 + i) != '\0')
+i++;
+while (*(n2 + j) != '\0')
+j++;
+i--;
+j--;
+if (j >= size_r || i >= size_r)
+return (0);
+while (j >= 0 || i >= 0 || overflow == 1)
+{
+if (i < 0)
+val1 = 0;
+else
+val1 = *(n1 + i) -'0';
+if (j < 0)
+val2 = 0;
+else
+val2 = *(n2 + j) -'0';
+temp_tot = val1 + val2 + overflow;
+if (temp_tot >= 10)
+overflow = 1;
+else
+overflow = 0;
+if (digits >= (size_r - 1))
+return (0);
+*(r + digits) = (temp_tot % 10) + '0';
+digits++;
+j--;
+i--;
+}
+if (digits == size_r)
+return (0);
+*(r + digits) = '\0';
+reverse_string(r);
+return (r);
 }
