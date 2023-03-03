@@ -1,63 +1,58 @@
-#include "main.h"
+#	zinclude "main.h"
+#include <stdio.h>
+/**
+ * print_line - prints a s bytes of a buffer
+ * @c: The buffer to print
+ * @s: the bytes of buffer to print
+ * @l: the line of buffer to print
+ *
+ * Return: void
+ */
+
+void print_line(char *c, int s, int l)
+{
+int j, k;
+for (j = 0; j <= 9; j++)
+{
+if (j <= s)
+printf("%02x", c[l * 10 + j]);
+else
+printf("  ");
+if (j % 2)
+putchar(' ');
+}
+for (k = 0; k <= s; k++)
+{
+if (c[l * 10 + k] > 31 && c[l * 10 + k] < 127)
+putchar(c[l * 10 + k]);
+else
+putchar('.');
+}
+}
 
 /**
- * infinite_add - Adds two numbers.
- * @n1: The first number.
- * @n2: The second number.
- * @r: The buffer to store the result.
- * @size_r: The buffer size.
+ * print_buffer - prints a buffer
+ * @b: buffer to print
+ * @size: size of buffer
  *
- * Return: If the result can be stored in r - a pointer to the result.
- *         Otherwise - 0.
+ * Return: void
  */
-char *infinite_add(char *n1, char *n2, char *r, int size_r)
+void print_buffer(char *b, int size)
 {
-	int len1 = 0, len2 = 0, len_res = 0, carry = 0, sum = 0;
-
-	while (n1[len1] != '\0')
-		len1++;
-
-	while (n2[len2] != '\0')
-		len2++;
-
-	if (len1 + 1 > size_r || len2 + 1 > size_r)
-		return (0);
-
-	len1--;
-	len2--;
-	r[size_r - 1] = '\0';
-
-	while (len1 >= 0 || len2 >= 0)
-	{
-		sum = carry;
-		if (len1 >= 0)
-			sum += n1[len1--] - '0';
-		if (len2 >= 0)
-			sum += n2[len2--] - '0';
-		if (sum > 9)
-		{
-			carry = 1;
-			sum -= 10;
-		}
-		else
-			carry = 0;
-		r[len_res++] = sum + '0';
-	}
-
-	if (carry > 0)
-	{
-		if (len_res + 1 > size_r)
-			return (0);
-		r[len_res++] = carry + '0';
-	}
-
-	len_res--;
-	for (int i = 0; i < len_res; i++, len_res--)
-	{
-		char tmp = r[i];
-		r[i] = r[len_res];
-		r[len_res] = tmp;
-	}
-
-	return (r);
+int i;
+for (i = 0; i <= (size - 1) / 10 && size; i++)
+{
+printf("%08x: ", i * 10);
+if (i < size / 10)
+{
+print_line(b, 9, i);
+}
+else
+{
+print_line(b, size % 10 - 1, i);
+}
+putchar('\n');
+}
+if (size == 0)
+putchar('\n');
 }
