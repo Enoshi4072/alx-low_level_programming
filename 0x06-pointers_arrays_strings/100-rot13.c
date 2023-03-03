@@ -2,25 +2,31 @@
 
 /**
  * rot13 - encodes a string in rot13
- * @str: string to be encoded
+ * @s: string to be encoded
  *
- * Return: pointer to the encoded string
+ * Return: the resulting string
  */
+char *rot13(char *s)
+{
+int i, j;
 
-char *rot13(char *str)
+char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+i = 0;
+while (s[i] != '\0')
 {
-char *p = str;
-while (*p != '\0')
+j = 0;
+while (a[j] != '\0')
 {
-if ((*p >= 'a' && *p <= 'm') || (*p >= 'A' && *p <= 'M'))
+if (s[i] == a[j])
 {
-*p += 13;
+s[i] = b[j];
+break;
 }
-else if ((*p >= 'n' && *p <= 'z') || (*p >= 'N' && *p <= 'Z'))
-{
-*p -= 13;
+j++;
 }
-p++;
+i++;
 }
-return (str);
+return (s);
 }
