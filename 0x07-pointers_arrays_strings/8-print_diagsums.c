@@ -17,8 +17,8 @@ int i;
 i = 0;
 while (i < size)
 {
-total_a += *(a + i*size + i);
-total_b += *(a + i*size + (size-i-1));
+total_a += *(a + i *size + i);
+total_b += *(a + i *size + (size - i - 1));
 i++;
 }
 printf("%d, %d\n", total_a, total_b);
