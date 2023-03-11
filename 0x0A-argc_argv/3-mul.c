@@ -13,12 +13,7 @@ int main(int argc __attribute__((unused)), char *argv[])
 {
 	int sum;
 
-	if (argc > 3)
-	{
-	printf("Error\n");
-	return (1);
-	}
-	else if (argc < 2)
+	if (argc > 3 || argc < 2)
 	{
 	printf("Error\n");
 	return (1);
