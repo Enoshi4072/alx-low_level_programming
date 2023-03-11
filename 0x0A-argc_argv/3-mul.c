@@ -13,12 +13,20 @@ int main(int argc __attribute__((unused)), char *argv[])
 {
 	int sum;
 
-	if (argc > 2)
+	if (argc > 3)
 	{
-	printf("Error");
+	printf("Error\n");
 	return (1);
 	}
-sum = atoi(argv[1]) + atoi(argv[2]);
+	else if (argc < 2)
+	{
+	printf("Error\n");
+	return (1);
+	}
+	else
+	{
+sum = atoi(argv[1]) * atoi(argv[2]);
 printf("%d", sum);
 return (0);
+	}
 }
