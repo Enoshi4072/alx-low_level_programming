@@ -13,7 +13,7 @@ int main(int argc __attribute__((unused)), char *argv[])
 {
 	int sum;
 
-	if (argc > 3 || argc < 2)
+	if (argc > 3 || argc < 3)
 	{
 	printf("Error\n");
 	return (1);
@@ -21,7 +21,7 @@ int main(int argc __attribute__((unused)), char *argv[])
 	else
 	{
 sum = atoi(argv[1]) * atoi(argv[2]);
-printf("%d", sum);
+printf("%d\n", sum);
 return (0);
 	}
 }
