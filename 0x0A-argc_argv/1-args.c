@@ -2,7 +2,7 @@
 
 /**
  * main - prints the number arguments passed.
- to the program
+ * to the program
  * @argc: The number of arguments
  * @argv: The array of arguments
  * Return: Always 0(Success)
