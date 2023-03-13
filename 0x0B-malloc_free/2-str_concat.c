@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include "main.h"
 /**
  * *str_concat - concatenates two strings
  * @s1: string to concatenate
@@ -13,6 +14,8 @@ unsigned int i;
 unsigned int j;
 unsigned int length1;
 unsigned int length2;
+length1 = 0;
+length2 = 0;
 i = 0;
 j = 0;
 
@@ -23,11 +26,12 @@ while (s2 && s2[length2])
 ptr = malloc(sizeof(char) * (length1 + length2 + 1));
 if (ptr == NULL)
 	return (NULL);
+
 if (s1)
 {
 while (i < length1)
 {
-	ptr[1] = s1[i];
+	ptr[i] = s1[i];
 		i++;
 }
 }
