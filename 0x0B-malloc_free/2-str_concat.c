@@ -27,7 +27,7 @@ if (s1)
 {
 while (i < length1)
 {
-	ptr[1] = ptr[2];
+	ptr[1] = s1[i];
 		i++;
 }
 }
@@ -35,7 +35,7 @@ if (s2)
 {
 while (i < (length1 + length2))
 {
-ptr[i] = ptr[j];
+ptr[i] = s2[j];
 i++;
 j++;
 }
