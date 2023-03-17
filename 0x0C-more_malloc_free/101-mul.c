@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "main.h"
-
 /**
  * check_if_digit - checks if a string contains a non-digit char
  * @s: string to be evaluated *
@@ -10,7 +9,6 @@
 int check_if_digit(char *s)
 {
 int i;
-
 for (i = 0; s[i]; i++)
 {
 if (s[i] < '0' || s[i] > '9')
@@ -18,7 +16,6 @@ if (s[i] < '0' || s[i] > '9')
 }
 return (1);
 }
-
 /**
  * mis - handles errors for main
  */
@@ -27,7 +24,6 @@ void mis(void)
 printf("Error\n");
 exit(98);
 }
-
 /**
  * length_string - returns the length of a string
  * @s: string to evaluate
@@ -36,8 +32,10 @@ exit(98);
 int length_string(char *s)
 {
 int i;
-
-for (i = 0; s[i] != '\0'; i++)
+while (s[i] != '\0')
+{
+	i++;
+}
 return (i);
 }
 /**
