@@ -31,7 +31,7 @@ case 's':
 	if (!string_ptr)
 		string_ptr = "(nil)";
 	printf("%s%s", separator_ptr, string_ptr);
-        break;
+	break;
 default:
 	p++;
 	continue;
