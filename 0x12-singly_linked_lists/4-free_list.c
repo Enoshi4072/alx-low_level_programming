@@ -1,11 +1,11 @@
-#include "main.h"
+#include "lists.h"
 /**
  * free_list - frees the memory allocated to list_t list
  * @head: pointer to the list_t
  */
 void free_list(list_t *head)
 {
-	list *temp_ptr;
+	list_t *temp_ptr;
 
 	while (head != NULL)
 	{
