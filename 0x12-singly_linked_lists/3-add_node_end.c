@@ -7,7 +7,7 @@
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-list_t *n_node, *temp_ptr;
+list_t *n_node, *temp_ptr = *head;
 unsigned int len = 0;
 
 while (str[len])
