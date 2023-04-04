@@ -18,19 +18,20 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	nodeptr->next = NULL;
 	if (*head == NULL)
 		return (NULL);
-	prev = *head;
 	if (idx == 0)
 	{
 		nodeptr->next = *head;
 		*head = nodeptr;
 		return (nodeptr);
 	}
+	prev = *head;
 	for (i = 0; (prev != NULL) && i < idx - 1; i++)
+	{
 		prev = prev->next;
-	if (i != idx)
+	}
+	if (!prev || i != idx - 1)
 		return (NULL);
 	nodeptr->next = prev->next;
-	prev->next = nodeptr;
-
+        prev->next = nodeptr;
 return (nodeptr);
 }
