@@ -50,4 +50,3 @@ close(file_desc);
 /* Return the actual number of letters read and printed */
 return (byte_count);
 }
-
