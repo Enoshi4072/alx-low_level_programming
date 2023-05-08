@@ -12,6 +12,7 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
+int *char_buffer;
 int file_desc;
 int byte_count;
 
